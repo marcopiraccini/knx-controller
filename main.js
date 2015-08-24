@@ -2,8 +2,10 @@ var eibd = require('eibd');
 var bunyan = require('bunyan');
 var Hapi = require('hapi');
 var server = new Hapi.Server();
+var fs = require('fs');
 
 var logConfig = require('./config/logger-config');
+
 var log = bunyan.createLogger(logConfig);
 
 // TODO: load from config
