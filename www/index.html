@@ -1,0 +1,46 @@
+<!doctype html>
+
+<html class="no-js" ng-app="event-monitor">
+  <head>
+    <meta charset="utf-8">
+    <title>KNX Event Monitor</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/event-controller.js"></script>
+    <script src="scripts/event-service.js"></script>
+
+  </head>
+
+  <body>
+
+    <div class="container" ng-controller="EventCtrl">
+
+          <h4>KNX Event Monitor</h4>
+          <div style="height:250px;overflow:scroll;">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td>
+                    <ul class="list-group">
+                      <li ng-repeat="event in eventlogs"
+                          ng-class="list-group-item list-group-item-success">
+                            {{event}}
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+    </div>
+
+  </body>
+</html>

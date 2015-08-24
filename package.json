@@ -1,0 +1,26 @@
+{
+  "name": "knx-monitor",
+  "version": "0.0.1",
+  "author": "Marco Piraccini <marco.piraccini@gmail.com>",
+  "description": "Knx HTTP API",
+  "scripts": {
+    "mocha": "mocha ./test",
+    "test": "npm run-script mocha && npm run-script jshint",
+    "jshint": "node_modules/jshint/bin/jshint lib *.js",
+    "start": "node main.js | node_modules/.bin/bunyan"
+  },
+  "main": "main.js",
+  "dependencies": {
+    "bunyan": "^1.2.3",
+    "debug": "^2.1.1",
+    "eibd": "^0.3.0",
+    "hapi": "^8.8.1",
+    "mocha": "2.0.1",
+    "socket.io": "^1.3.6"
+  },
+  "private": true,
+  "license": "MIT",
+  "devDependencies": {
+    "jshint": "^2.8.0"
+  }
+}
