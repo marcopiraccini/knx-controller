@@ -3,13 +3,15 @@ var bunyan = require('bunyan');
 var Hapi = require('hapi');
 var server = new Hapi.Server();
 var fs = require('fs');
+var homedevices = require('./lib/homedevices')(require('./config/home'));
 
 var logConfig = require('./config/logger-config');
 
 var log = bunyan.createLogger(logConfig);
 
 // TODO: load from config
-var host = '127.0.0.1';
+// var host = '127.0.0.1';
+var host = '192.168.69.170';
 var port = 6720;
 
 /**
@@ -21,7 +23,6 @@ function groupsocketlisten(opts, callback) {
     conn.socketRemote(opts, function() {
         conn.openGroupSocket(0, callback);
     });
-
 }
 
 groupsocketlisten({ host: host, port: port }, function(parser) {
@@ -29,8 +30,7 @@ groupsocketlisten({ host: host, port: port }, function(parser) {
     parser.on('write', function(src, dest, dpt, val){
         var writeEvent = {
             type: 'write',
-            src: src,
-            dest: dest,
+            dest: homedevices.getDevice(dest),
             val:val
         }
         log.info(writeEvent);
@@ -40,8 +40,7 @@ groupsocketlisten({ host: host, port: port }, function(parser) {
     parser.on('response', function(src, dest, val) {
         var responseEvent = {
             type: 'response',
-            src: src,
-            dest: dest,
+            dest: homedevices.getDevice(dest),
             val:val
         }
         log.info(responseEvent);
@@ -51,8 +50,7 @@ groupsocketlisten({ host: host, port: port }, function(parser) {
     parser.on('read', function(src, dest) {
         var readEvent = {
             type: 'read',
-            src: src,
-            dest: dest
+            dest: homedevices.getDevice(dest),
         }
         log.info(readEvent);
         io.sockets.emit('event', readEvent);

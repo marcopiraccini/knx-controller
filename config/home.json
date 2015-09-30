@@ -1,0 +1,47 @@
+{
+  "rooms":[{
+        "id":"casa",
+        "description":"Casa"
+    },{
+        "id":"soggiorno",
+        "description":"Soggiorno"
+    },{
+        "id":"corridoio",
+        "description":"Corridoio"
+    },{
+        "id":"home",
+        "description":"Home"
+    }
+  ],
+  "devices": [
+       {
+          "id": "tapparella.soggiorno",
+          "room": "soggiorno",
+          "description": "Toggle su Tapparella soggiorno",
+          "gad": "0/0/101",
+          "gad-read": "0/0/104",
+          "type": "window"
+       },{
+          "id": "luce.fine.scala",
+          "room": "soggiorno",
+          "description": "Status Luce Fine Scala",
+          "gad": "0/0/7",
+          "gad-read": "0/0/8",
+          "type": "on-off"
+      },{
+          "id": "termostato.laboratorio",
+          "room": "laboratorio",
+          "description": "Temperatura laboratorio",
+          "gad" : "0/0/86",
+          "gad-read" : "0/0/85",
+          "gad-on" : "0/0/87",
+          "type": "temp"
+      },{
+          "id": "consumo.corrente",
+          "room": "casa",
+          "description": "Consumo Istantaneo Corrente",
+          "gad-read" : "0/0/142",
+          "type": "power"
+      }
+  ]
+}
