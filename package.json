@@ -1,8 +1,8 @@
 {
-  "name": "knx-monitor",
+  "name": "knx-controller",
   "version": "0.0.1",
   "author": "Marco Piraccini <marco.piraccini@gmail.com>",
-  "description": "Knx HTTP API",
+  "description": "Knx Home Controllers based on node-eibd",
   "scripts": {
     "mocha": "mocha ./test",
     "test": "npm run-script mocha && npm run-script jshint",
@@ -13,8 +13,10 @@
   "dependencies": {
     "bunyan": "^1.2.3",
     "debug": "^2.1.1",
-    "eibd": "^0.3.0",
-    "hapi": "^8.8.1",
+    "eibd": "gti+ssh://git@github.com:marcopiraccini/node-eibd.git",
+    "good": "^6.4.0",
+    "good-console": "^5.1.0",
+    "hapi": "^10.2.0",
     "lodash": "^3.10.1",
     "socket.io": "^1.3.6"
   },

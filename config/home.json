@@ -13,35 +13,61 @@
         "description":"Home"
     }
   ],
-  "devices": [
+  "actions": [
        {
-          "id": "tapparella.soggiorno",
+          "id": "tapparella.soggiorno.read",
           "room": "soggiorno",
-          "description": "Toggle su Tapparella soggiorno",
-          "gad": "0/0/101",
-          "gad-read": "0/0/104",
+          "description": "Read Tapparella soggiorno",
+          "gad": "0/0/104",
           "type": "window"
        },{
-          "id": "luce.fine.scala",
+           "id": "tapparella.soggiorno.set",
+           "room": "soggiorno",
+           "description": "Toggle su Tapparella soggiorno",
+           "gad": "0/0/101",
+           "type": "window"
+       },{
+          "id": "luce.caldaia.read",
           "room": "soggiorno",
-          "description": "Status Luce Fine Scala",
-          "gad": "0/0/7",
-          "gad-read": "0/0/8",
+          "description": "Status Luce Caldaia",
+          "gad": "0/0/34",
           "type": "on-off"
+       },{
+         "id": "luce.caldaia.set",
+         "room": "soggiorno",
+         "description": "Set Luce Caldaia",
+         "gad": "0/0/33",
+         "type": "on-off"
       },{
-          "id": "termostato.laboratorio",
+          "id": "termostato.laboratorio.read",
           "room": "laboratorio",
-          "description": "Temperatura laboratorio",
-          "gad" : "0/0/86",
-          "gad-read" : "0/0/85",
-          "gad-on" : "0/0/87",
+          "description": "Lettura Temperatura laboratorio",
+          "gad" : "0/0/85",
           "type": "temp"
       },{
-          "id": "consumo.corrente",
+          "id": "termostato.laboratorio.set",
+          "room": "laboratorio",
+          "description": "Write temperature setpoint",
+          "gad" : "0/0/86",
+          "type": "temp"
+      },{
+          "id": "riscaldamento.laboratorio.read",
+          "room": "laboratorio",
+          "description": "Stato riscaldamento laboratorio",
+          "gad" : "0/0/72",
+          "type": "on-off"
+      },{
+          "id": "riscaldamento.laboratorio.set",
+          "room": "laboratorio",
+          "description": "Set riscaldamento laboratorio",
+          "gad" : "0/0/74",
+          "type": "on-off"
+      },{
+          "id": "consumo.corrente.istantaneo.read",
           "room": "casa",
           "description": "Consumo Istantaneo Corrente",
-          "gad-read" : "0/0/142",
-          "type": "power"
+          "gad" : "0/0/142",
+          "type": "float"
       }
   ]
 }

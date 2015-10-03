@@ -3,86 +3,34 @@ var bunyan = require('bunyan');
 var Hapi = require('hapi');
 var server = new Hapi.Server();
 var fs = require('fs');
-var homedevices = require('./lib/homedevices')(require('./config/home'));
-
 var logConfig = require('./config/logger-config');
-
 var log = bunyan.createLogger(logConfig);
 
-// TODO: load from config
-// var host = '127.0.0.1';
-var host = '192.168.69.170';
-var port = 6720;
+// TODO: load configurations from config
+// Add the config file position using ENV.
+var knxHost = '192.168.69.172';
+var knxPort = 6720;
+var httpPort = 4000;
 
-/**
- * groupsocketlisten
- */
-function groupsocketlisten(opts, callback) {
+var knx = require('./lib/knx');
+var api = require('./lib/api');
+var eventstore = require('./lib/api');
 
-    var conn = eibd.Connection();
-    conn.socketRemote(opts, function() {
-        conn.openGroupSocket(0, callback);
-    });
-}
-
-groupsocketlisten({ host: host, port: port }, function(parser) {
-
-    parser.on('write', function(src, dest, dpt, val){
-        var writeEvent = {
-            type: 'write',
-            dest: homedevices.getDevice(dest),
-            val:val
-        }
-        log.info(writeEvent);
-        io.sockets.emit('event', writeEvent);
-    });
-
-    parser.on('response', function(src, dest, val) {
-        var responseEvent = {
-            type: 'response',
-            dest: homedevices.getDevice(dest),
-            val:val
-        }
-        log.info(responseEvent);
-        io.sockets.emit('event', writeEvent);
-    });
-
-    parser.on('read', function(src, dest) {
-        var readEvent = {
-            type: 'read',
-            dest: homedevices.getDevice(dest),
-        }
-        log.info(readEvent);
-        io.sockets.emit('event', readEvent);
-
-    });
-});
-
-// TODO: Load port from config.
-server.connection({ port: 4000, labels: ['ns'] });
-var io = require('socket.io')(server.select('ns').listener);
-
-
-// HTTP Endpoint configuration
-server.select('ns').route({
-    method: 'GET',
-    path: '/{path*}',
-    handler: {
-         directory: {
-            path: './www',
-            listing: false,
-            index: true
-        }
-    }
-});
-
-server.start(function(err){
+// Init the knx connection and the the othe sub-components
+knx.init(knxHost, knxPort, function (err, knx) {
     if (err) {
-        console.log(err);
+        console.log('**** Error', err, `Exiting, check that KNXD is up and running\n`);
+        process.exit(1);
     }
-    var row = '*********************************************************************';
-    console.log(row);
-    console.log('KNX Monitor Service Running on port 4000');
-    console.log('Connected to KNXD: 127.0.0.1, PORT: 6720');
-    console.log(row);
+
+    api.start(httpPort, knx, function(err) {
+        if (err) {
+            console.log(err);
+        }
+        var row = '*********************************************************************';
+        console.log(row);
+        console.log('KNX Controller Service Running on port 4000');
+        console.log(`Connected to KNXD: ${knxHost}, PORT: ${knxPort}`);
+        console.log(row);
+    });
 });
