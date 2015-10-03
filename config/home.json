@@ -68,6 +68,20 @@
           "description": "Consumo Istantaneo Corrente",
           "gad" : "0/0/142",
           "type": "float"
+      },{
+          "id": "time.read",
+          "room": "casa",
+          "description": "Lettura Tempo",
+          "gad" : "0/0/144",
+          "type": "time",
+          "virtual": true
+      },{
+          "id": "date.read",
+          "room": "casa",
+          "description": "Lettura Data",
+          "gad" : "0/0/143",
+          "type": "date",
+          "virtual": true
       }
   ]
 }
