@@ -25,3 +25,26 @@ ng-outlet {
 .ng-leave.ng-leave-active{
     left: -100%;
 }
+
+.button .buttonContent {
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    cursor: default;
+}
+
+.light-on {
+    position:absolute;
+    width: 32px;
+    height: 32px;
+    display: block;
+    background-image : url('img/light_on.png');
+}
+
+.light-off {
+    position:absolute;
+    width: 32px;
+    height: 32px;
+    display: block;
+    background-image : url('img/light_off.png');
+}

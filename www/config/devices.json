@@ -1,0 +1,22 @@
+[{
+              "id": "luce.soggiorno",
+              "pos": [415,642],
+              "p4":true,
+              "read": "luce.soggiorno.read",
+              "set": "luce.soggiorno.set",
+              "tag":"light"
+          },{
+              "id": "luce.caldaia",
+              "pos": [415,642],
+              "p5":true,
+              "read": "luce.caldaia.read",
+              "set": "luce.caldaia.set",
+              "tag":"light"
+          },{
+              "id": "luce.laboratorio",
+              "pos": [480,600],
+              "p5":true,
+              "read": "luce.laboratorio.read",
+              "set": "luce.laboratorio.set",
+              "tag":"light"
+}]

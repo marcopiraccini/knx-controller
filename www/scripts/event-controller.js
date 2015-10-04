@@ -8,7 +8,6 @@
   function($scope, eventservice) {
 
     // EVENT LOGS
-    $scope.eventlogs = [];
 
     eventservice.on('event', function (event) {
         $scope.eventlogs.push(event);

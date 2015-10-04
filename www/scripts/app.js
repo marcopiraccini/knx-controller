@@ -25,20 +25,63 @@ app.config(['$routeProvider',
 }]);
 
 
-app.
-    controller('AppController', function($scope, $location) {
-        $scope.next='p5';
-        $scope.prev='';
-        $scope.updateNavigation = function () {
-            if ($location.path() === '/') {
-                $scope.next='p5';
-                $scope.prev='graph';
-            } else if ($location.path() === '/p5') {
-                $scope.next='graph';
-                $scope.prev='';
-            } else if ($location.path() === '/graph') {
-                $scope.next='';
-                $scope.prev='p5';
-            }
-        };
-});
+app.controller('AppController', ['$scope', '$location', '$http','knx-service', 'event-service',
+
+ function($scope, $location, $http, knxservice, eventservice) {
+     $scope.next='p5';
+     $scope.prev='';
+     $scope.updateView = function () {
+         if ($location.path() === '/') {
+             $scope.next='p5';
+             $scope.prev='graph';
+         } else if ($location.path() === '/p5') {
+             $scope.next='graph';
+             $scope.prev='';
+         } else if ($location.path() === '/graph') {
+             $scope.next='';
+             $scope.prev='p5';
+         }
+     };
+
+     /**
+      * Toggle a button (on/off).
+      */
+     $scope.toggle = function(device) {
+         var val;
+         if (device.value === 'on') {
+             val = 'off';
+         } else {
+             val = 'on';
+         }
+         knxservice.post(device, val);
+     }
+
+     eventservice.on('event', function(event) {
+         console.log("EVENT", event);
+         if ($scope.devices ) {
+             var device = $scope.devices.filter(function(device) {
+                 return (event.dest === device.read);
+             });
+             if (device) {
+                 device[0].value = event.val;
+             }
+         }
+
+     })
+
+     $http.get('config/devices.json')
+         .then(function(res){
+             $scope.devices = res.data;
+
+             // Reset the devices and sends a "read" message to every device
+             // to be displayed.
+             $scope.devices.forEach(function(device) {
+                 if (device.tag === 'light') {
+                     device.value = 'off';
+                 }
+                 knxservice.read(device);
+             });
+       });
+ }
+
+]);
