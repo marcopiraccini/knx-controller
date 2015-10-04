@@ -3,7 +3,7 @@
 /**
  * Servce that manages socket.io connections.
  */
- angular.module('event-monitor').factory('event-service', function($rootScope) {
+ angular.module('knx-console').factory('event-service', function($rootScope) {
 
   var socket = io.connect();
   return {

@@ -1,26 +1,69 @@
 <!doctype html>
 
-<html class="no-js" ng-app="event-monitor">
+<html class="no-js" ng-app="knx-console">
   <head>
     <meta charset="utf-8">
-    <title>KNX Event Monitor</title>
+    <title>KNX Console</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="css/app.css" />
 
     <script src="/socket.io/socket.io.js"></script>
-
     <script src="lib/angular/angular.js"></script>
+    <!-- script src="lib/angular-new-router/dist/router.es5.js"></script-->
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="lib/angular-animate/angular-animate.js"></script>
     <script src="scripts/app.js"></script>
-    <script src="scripts/event-controller.js"></script>
-    <script src="scripts/event-service.js"></script>
+    <script src="./components/p4/p4.js"></script>
+    <script src="./components/p5/p5.js"></script>
+    <script src="./components/graph/graph.js"></script>
+
+    <style type="text/css">
+        .p4 {
+            width: 1110px;
+            height: 850px;
+            background-image: url('img/p4.png');
+            background-repeat: no-repeat;
+        }
+        .p5 {
+            width: 1110px;
+            height: 850px;
+            background-image: url('img/p5.png');
+            background-repeat: no-repeat;
+        }
+        .notification {
+            width: 1110px;
+            height: 100px;
+        }
+    </style>
 
   </head>
 
-  <body>
+  <body ng-controller="AppController">
 
-    <div class="container" ng-controller="EventCtrl">
+      <div class="menuTitle"></div>
+      <div id="notificationZone" class="notification">NOTIFICATION AREA</div>
+
+    <div>
+        <li class="loader" ng-if="router.isNavigating">
+          <i class="fa fa-spinner fa-spin fa-2x"></i>
+        </li>
+    </div>
+
+      <div id="screen">
+          <a ng-href="#/{{prev}}">
+              <img class="prev" src="img/previous.png" alt="prev" width="42" height="53" style="position: absolute; left: 10px; top: 405px; display: block;"/>
+          </a>
+          <div ng-view autoscroll></div>
+
+          <a ng-href="#/{{next}}">
+              <img class="next" src="img/next.png" alt="next" width="42" height="53"  style="position: absolute; left: 1070px; top: 405px; display: block;"/>
+          </a>
+      </div>
+
+    <!--div class="container" ng-controller="EventCtrl">
 
           <h4>KNX Event Monitor</h4>
           <div style="height:250px;overflow:scroll;">
@@ -38,9 +81,9 @@
                 </tr>
               </tbody>
             </table>
-          </div>
+        </div>
 
-    </div>
+    </div>-->
 
   </body>
 </html>

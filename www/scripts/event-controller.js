@@ -3,7 +3,7 @@
 /**
  * Event Monitor Controller.
  */
- angular.module('event-monitor').controller('EventCtrl', ['$scope', 'event-service',
+ angular.module('knx-console').controller('EventCtrl', ['$scope', 'event-service',
 
   function($scope, eventservice) {
 
