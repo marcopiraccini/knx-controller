@@ -28,13 +28,14 @@
            "type": "window"
        },{
           "id": "luce.caldaia.read",
-          "room": "soggiorno",
+          "room": "laboratorio",
           "description": "Status Luce Caldaia",
           "gad": "0/0/34",
-          "type": "on-off"
+          "type": "on-off",
+          "tag":"light"
        },{
          "id": "luce.caldaia.set",
-         "room": "soggiorno",
+         "room": "laboratorio",
          "description": "Set Luce Caldaia",
          "gad": "0/0/33",
          "type": "on-off"
@@ -43,7 +44,8 @@
           "room": "laboratorio",
           "description": "Lettura Temperatura laboratorio",
           "gad" : "0/0/85",
-          "type": "temp"
+          "type": "temp",
+          "tag":"temp"
       },{
           "id": "termostato.laboratorio.set",
           "room": "laboratorio",
@@ -67,7 +69,8 @@
           "room": "casa",
           "description": "Consumo Istantaneo Corrente",
           "gad" : "0/0/142",
-          "type": "float"
+          "type": "float",
+          "tag":"energy"
       },{
           "id": "time.read",
           "room": "casa",

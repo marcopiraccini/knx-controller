@@ -14,7 +14,7 @@ var httpPort = 4000;
 
 var knx = require('./lib/knx');
 var api = require('./lib/api');
-var eventstore = require('./lib/api');
+var eventstore = require('./lib/eventstore');
 
 // Init the knx connection and the the othe sub-components
 knx.init(knxHost, knxPort, function (err, knx) {
@@ -22,6 +22,8 @@ knx.init(knxHost, knxPort, function (err, knx) {
         console.log('**** Error', err, `Exiting, check that KNXD is up and running\n`);
         process.exit(1);
     }
+
+    eventstore.start(knx);
 
     api.start(httpPort, knx, function(err) {
         if (err) {
