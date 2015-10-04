@@ -1,11 +1,9 @@
 <div id="p4" class="p4" ng-controller="P4Controller">
 
-
-<!-- Load the devices elements -->
-<div ng-repeat="device in devices">
-    <div ng-if="device.p4" ng-click='toggle(device)' style="position:absolute; left: {{device.pos[0]}}px; top: {{device.pos[1]}}px; width: 32px; height: 32px; display: block;background-image: url('img/light_off.png');">
+    <!-- Load the lights elements for p4 -->
+    <div ng-repeat="device in devices">
+        <div ng-if="device.p4 && (device.tag === 'light')" ng-click='toggle(device)' ng-style="getLightStyle(device)">
+        </div>
     </div>
-</div>
-
 
 </div>

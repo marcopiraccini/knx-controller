@@ -1,8 +1,8 @@
 <div id="p5" class="p5" ng-controller="P5Controller">
 
-    <!-- Load the devices elements -->
+    <!-- Load the lights elements for p5 -->
     <div ng-repeat="device in devices">
-        <div ng-if="device.p5" ng-click='toggle(device)' ng-style="getLightStyle(device)">
+        <div ng-if="device.p5 && (device.tag === 'light')" ng-click='toggle(device)' ng-style="getLightStyle(device)">
         </div>
     </div>
 

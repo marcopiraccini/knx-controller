@@ -56,18 +56,30 @@ app.controller('AppController', ['$scope', '$location', '$http','knx-service', '
          knxservice.post(device, val);
      }
 
+     $scope.getLightStyle = function (device) {
+         return {
+             left: device.pos[0] + 'px',
+             top:  device.pos[1] + 'px',
+             position: 'absolute',
+             width: '32px',
+             height: '32px',
+             display: 'block',
+             'background-image': 'url(img/light_' + device.value +'.png)'
+         };
+     };
+
      eventservice.on('event', function(event) {
          console.log("EVENT", event);
          if ($scope.devices ) {
              var device = $scope.devices.filter(function(device) {
                  return (event.dest === device.read);
              });
-             if (device) {
+             if ((device) && (device[0])) {
                  device[0].value = event.val;
              }
          }
 
-     })
+     });
 
      $http.get('config/devices.json')
          .then(function(res){
