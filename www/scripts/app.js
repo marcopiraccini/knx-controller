@@ -89,13 +89,13 @@ app.controller('AppController', ['$scope', '$location', '$http','knx-service', '
        });
 
      eventservice.on('event', function(event) {
-         console.log("EVENT DEST", event.dest);
          if ($scope.devices) {
              var device = $scope.devices.filter(function(device) {
                  return (event.dest === device.read);
              });
 
              if ((device) && (device[0])) {
+                 console.log("********", device[0].id,'setting', event.val)
                  device[0].value = event.val;
              }
              if (event.dest === "consumo.corrente.istantaneo.read") {
@@ -112,6 +112,12 @@ app.controller('AppController', ['$scope', '$location', '$http','knx-service', '
              }
              if (event.dest === "termostato.laboratorio.read") {
                  $scope.termostatoLaboratorio = event.val;
+             }
+             if (event.dest === "termostato.bagno.read") {
+                 $scope.termostatoBagno = event.val;
+             }
+             if (event.dest === "termostato.casa.albero.read") {
+                 $scope.termostatoCasaAlbero = event.val;
              }
          }
 

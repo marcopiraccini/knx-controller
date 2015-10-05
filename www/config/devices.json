@@ -1,14 +1,14 @@
 [
       {
           "id": "luce.soggiorno",
-          "pos": [315,550],
+          "pos": [244,147],
           "p4":true,
           "read": "luce.soggiorno.read",
           "set": "luce.soggiorno.set",
           "tag":"light"
       },{
           "id": "luce.caldaia",
-          "pos": [555,842],
+          "pos": [550,740],
           "p5":true,
           "read": "luce.caldaia.read",
           "set": "luce.caldaia.set",
@@ -20,7 +20,161 @@
           "read": "luce.laboratorio.read",
           "set": "luce.laboratorio.set",
           "tag":"light"
-      },{
+      },
+      {
+          "id": "luce.tavolo.soggiorno",
+          "pos": [239,581],
+          "p4":true,
+          "read": "luce.tavolo.soggiorno.read",
+          "set": "luce.tavolo.soggiorno.set",
+          "tag":"light"
+      },
+      {
+          "id": "luce.scala",
+          "pos": [422,40],
+          "p4":true,
+          "read": "luce.scala.read",
+          "set": "luce.scala.set",
+          "tag":"light"
+      },
+      {
+          "id": "luce.fine.scala",
+          "pos": [338,302],
+          "p5":true,
+          "read": "luce.fine.scala.read",
+          "set": "luce.fine.scala.set",
+          "tag":"light"
+      },
+      {
+          "id": "luce.sgabuzzino",
+          "pos": [606,780],
+          "p4":true,
+          "read": "luce.sgabuzzino.read",
+          "set": "luce.sgabuzzino.set",
+          "tag":"light"
+      },
+      {
+          "id": "luce.ingresso",
+          "pos": [562,533],
+          "p4":true,
+          "read": "luce.ingresso.read",
+          "set": "luce.ingresso.set",
+          "tag":"light"
+      },
+      {
+          "id": "luce.bagno",
+          "pos": [872,413],
+          "p4":true,
+          "read": "luce.bagno.read",
+          "set": "luce.bagno.set",
+          "tag":"light"
+      },
+      {
+          "id": "luce.faretto.bimbi",
+          "pos": [531,127],
+          "p4":true,
+          "read": "luce.faretto.bimbi.read",
+          "set": "luce.faretto.bimbi.set",
+          "tag":"light"
+      },
+      {
+          "id": "luce.camera.ma",
+          "pos": [835,638],
+          "p4":true,
+          "read": "luce.camera.ma.read",
+          "set": "luce.camera.ma.set",
+          "tag":"light"
+      },
+      {
+          "id": "luce.camera.bimbi",
+          "pos": [834,173],
+          "p4":true,
+          "read": "luce.camera.bimbi.read",
+          "set": "luce.camera.bimbi.set",
+          "tag":"light"
+      },
+      {
+          "id": "luce.laboratorio.scrivania",
+          "pos": [600,740],
+          "p5":true,
+          "read": "luce.laboratorio.scrivania.read",
+          "set": "laboratorio.scrivania.set",
+          "tag":"light"
+      },
+      {
+          "id": "luce.casa.albero",
+          "pos": [557,140],
+          "p5":true,
+          "read": "luce.casa.albero.read",
+          "set": "luce.casa.albero.set",
+          "tag":"light"
+      },
+      {
+          "id": "luce.corridoio",
+          "pos": [415,420],
+          "p5":true,
+          "read": "luce.corridoio.read",
+          "set": "luce.corridoio.set",
+          "tag":"light"
+      },
+      {
+          "id": "luce.bagno.specchiera",
+          "pos": [871,468],
+          "p4":true,
+          "read": "luce.bagno.specchiera.read",
+          "set": "luce.bagno.specchiera.set",
+          "tag":"light"
+      },
+      {
+          "id": "luce.faretto.camera.ma",
+          "pos": [930,526],
+          "p4":true,
+          "read": "luce.faretto.camera.ma.read",
+          "set": "luce.faretto.camera.ma.set",
+          "tag":"light"
+      },
+      {
+          "id": "luce.pensatoio",
+          "pos": [308,655],
+          "p5":true,
+          "read": "luce.pensatoio.read",
+          "set": "luce.pensatoio.set",
+          "tag":"light"
+      },
+      {
+          "id": "luce.paretedx.bimbi",
+          "pos": [969,290],
+          "p4":true,
+          "read": "luce.paretedx.bimbi.read",
+          "set": "luce.paretedx.bimbi.set",
+          "tag":"light"
+      },
+      {
+          "id": "luce.colonna.bimbi",
+          "pos": [635,42],
+          "p4":true,
+          "read": "luce.colonna.bimbi.read",
+          "set": "luce.colonna.bimbi.set",
+          "tag":"light"
+      },
+      {
+          "id": "luce.specchiera.bagno.pt5",
+          "pos": [524,350],
+          "p5":true,
+          "read": "luce.specchiera.bagno.pt5.read",
+          "set": "luce.specchiera.bagno.pt5.set",
+          "tag":"light"
+      },
+      {
+          "id": "luce.bagno.pt5",
+          "pos": [652,350],
+          "p5":true,
+          "read": "luce.bagno.pt5.read",
+          "set": "luce.bagno.pt5.set",
+          "tag":"light"
+      },
+
+      {
           "id": "consumo.corrente.istantaneo",
           "read": "consumo.corrente.istantaneo.read",
           "tag":"energy"
@@ -44,5 +198,16 @@
           "id": "termostato.laboratorio",
           "read": "termostato.laboratorio.read",
           "tag":"temp"
+      },
+      {
+          "id": "termostato.bagno",
+          "read": "termostato.bagno.read",
+          "tag":"temp"
+      },
+      {
+          "id": "termostato.casa.albero",
+          "read": "termostato.casa.albero.read",
+          "tag":"temp"
       }
+
 ]

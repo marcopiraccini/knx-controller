@@ -368,7 +368,7 @@
           "type": "on-off",
           "tag":"light"
        },{
-         "id": "luce.luce.specchiera.bagno.pt5.set",
+         "id": "luce.specchiera.bagno.pt5.set",
          "room": "bagno.sopra",
          "description": "Set Luce Specchiera Bagno PT5",
          "gad": "0/0/47",
@@ -381,7 +381,7 @@
           "type": "on-off",
           "tag":"light"
        },{
-         "id": "luce.luce.bagno.pt5.set",
+         "id": "luce.bagno.pt5.set",
          "room": "bagno.sopra",
          "description": "Set Luce Bagno PT5",
          "gad": "0/0/49",
@@ -409,8 +409,7 @@
           "type": "temp",
           "tag":"temp"
       },
-
-{
+      {
           "id": "termostato.camera.ma.read",
           "room": "camera",
           "description": "Lettura Temperatura Camera MA",
@@ -418,14 +417,30 @@
           "type": "temp",
           "tag":"temp"
       },
-{
+      {
           "id": "termostato.bimbi.read",
           "room": "bimbi",
           "description": "Lettura Temperatura Bimbi",
           "gad" : "0/0/95",
           "type": "temp",
           "tag":"temp"
-      }
+      },
+      {
+            "id": "termostato.bagno.read",
+            "room": "bagno",
+            "description": "Lettura Temperatura Bagno",
+            "gad" : "0/0/97",
+            "type": "temp",
+            "tag":"temp"
+        },
+        {
+              "id": "termostato.casa.albero.read",
+              "room": "bagno",
+              "description": "Lettura Temperatura Casa Albero",
+              "gad" : "0/0/98",
+              "type": "temp",
+              "tag":"temp"
+          }
 
   ]
 }
