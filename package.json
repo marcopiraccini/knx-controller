@@ -14,7 +14,7 @@
     "async": "^1.4.2",
     "bunyan": "^1.2.3",
     "debug": "^2.1.1",
-    "eibd": "gti+ssh://git@github.com:marcopiraccini/node-eibd.git",
+    "eibd": "^0.3.2",
     "good": "^6.4.0",
     "good-console": "^5.1.0",
     "hapi": "^10.2.0",
