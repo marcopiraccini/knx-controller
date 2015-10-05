@@ -98,12 +98,12 @@
 
       <div id="screen">
           <a ng-href="#/{{prev}}">
-              <img class="prev" src="img/previous.png" alt="prev" width="42" height="53" style="position: absolute; left: 10px; top: 405px; display: block;"/>
+              <img class="prev" src="img/previous.png" alt="prev" width="42" height="53" style="z-index: 1;position: absolute; left: 10px; top: 405px; display: block;"/>
           </a>
           <div ng-view></div>
 
           <a ng-href="#/{{next}}">
-              <img class="next" src="img/next.png" alt="next" width="42" height="53"  style="position: absolute; left: 1070px; top: 405px; display: block;"/>
+              <img class="next" src="img/next.png" alt="next" width="42" height="53"  style="z-index: 1; position: absolute; left: 1070px; top: 405px; display: block;"/>
           </a>
       </div>
 
