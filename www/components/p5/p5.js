@@ -7,8 +7,6 @@
 
   function($scope, $location, knxservice) {
       $scope.updateView();
-
-
   }
 
 ]);

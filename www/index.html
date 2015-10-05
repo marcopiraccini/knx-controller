@@ -35,6 +35,10 @@
             background-image: url('img/p5.png');
             background-repeat: no-repeat;
         }
+        .graph {
+            width: 1110px;
+            height: 850px;
+        }
         .notification {
             width: 1110px;
             height: 100px;
@@ -46,7 +50,31 @@
   <body ng-controller="AppController">
 
       <div class="menuTitle"></div>
-      <div id="notificationZone" class="notification">NOTIFICATION AREA</div>
+      <div id="notificationZone" class="notification">
+          <table cellspacing="10">
+              <tr>
+                  <td>
+                      <div class="panel panel-default">
+                          <div class="panel-heading">Power (KW)</div>
+                          <div class="panel-body">{{consumoCorrente}}</div>
+                      </div>
+                  </td>
+                  <td>
+                      <div class="panel panel-default">
+                          <div class="panel-heading">Soggiorno (°C)</div>
+                          <div class="panel-body">{{termostatoSoggiorno}}</div>
+                      </div>
+                  </td>
+                  <td>
+                      <div class="panel panel-default">
+                          <div class="panel-heading">Laboratorio (°C)</div>
+                          <div class="panel-body">{{termostatoLaboratorio}}</div>
+                      </div>
+                  </td>
+              </tr>
+          <table>
+
+     </div>
 
     <div>
         <li class="loader" ng-if="router.isNavigating">

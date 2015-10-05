@@ -15,13 +15,16 @@
             console.log("Posted", device.set, value);
         });
     },
-    read: function (device) {
-        var req = {
-             method: 'GET',
-             url: '/knx/' + device.read
-        }
-        $http(req).then(function(){
-            console.log("Read", device.read);
+    read: function (device, callback) {
+        var url = '/knx/' + device.read ;
+        $http.get(url).success(function(data) {
+            console.log("Read sent", device.read);
+        });
+    },
+    refresh: function (device, callback) {
+        var url = '/knx/refresh';
+        $http.get(url).success(function(data) {
+            console.log("Refresh sent");
         });
     }
   };

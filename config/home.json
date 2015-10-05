@@ -14,19 +14,7 @@
     }
   ],
   "actions": [
-       {
-          "id": "tapparella.soggiorno.read",
-          "room": "soggiorno",
-          "description": "Read Tapparella soggiorno",
-          "gad": "0/0/104",
-          "type": "window"
-       },{
-           "id": "tapparella.soggiorno.set",
-           "room": "soggiorno",
-           "description": "Toggle su Tapparella soggiorno",
-           "gad": "0/0/101",
-           "type": "window"
-       },{
+        {
           "id": "luce.caldaia.read",
           "room": "laboratorio",
           "description": "Status Luce Caldaia",
@@ -85,6 +73,359 @@
           "gad" : "0/0/143",
           "type": "date",
           "virtual": true
+      },{
+          "id": "luce.soggiorno.read",
+          "room": "soggiorno",
+          "description": "Status Luce Soggiorno",
+          "gad": "0/0/2",
+          "type": "on-off",
+          "tag":"light"
+       },{
+         "id": "luce.soggiorno.set",
+         "room": "soggiorno",
+         "description": "Set Luce Soggiorno",
+         "gad": "0/0/1",
+         "type": "on-off"
+      },{
+          "id": "luce.tavolo.soggiorno.read",
+          "room": "soggiorno",
+          "description": "Status Tavolo Luce Soggiorno",
+          "gad": "0/0/4",
+          "type": "on-off",
+          "tag":"light"
+       },{
+         "id": "luce.tavolo.soggiorno.set",
+         "room": "soggiorno",
+         "description": "Set Luce Tavolo Soggiorno",
+         "gad": "0/0/3",
+         "type": "on-off"
+      }, {
+          "id": "luce.scala.read",
+          "room": "soggiorno",
+          "description": "Status Luce Scala Soggiorno",
+          "gad": "0/0/6",
+          "type": "on-off",
+          "tag":"light"
+       },{
+         "id": "luce.scala.set",
+         "room": "soggiorno",
+         "description": "Set Luce Scala Soggiorno",
+         "gad": "0/0/5",
+         "type": "on-off"
+      },{
+          "id": "luce.fine.scala.read",
+          "room": "soggiorno",
+          "description": "Status Luce Fine Scala Soggiorno",
+          "gad": "0/0/8",
+          "type": "on-off",
+          "tag":"light"
+       },{
+         "id": "luce.fine.scala.set",
+         "room": "soggiorno",
+         "description": "Set Luce Fine Scala Soggiorno",
+         "gad": "0/0/7",
+         "type": "on-off"
+      },{
+          "id": "luce.sgabuzzino.read",
+          "room": "soggiorno",
+          "description": "Status Luce Sgabuzzino",
+          "gad": "0/0/10",
+          "type": "on-off",
+          "tag":"light"
+       },{
+         "id": "luce.sgabuzzino.set",
+         "room": "soggiorno",
+         "description": "Set Luce sgabuzzino",
+         "gad": "0/0/9",
+         "type": "on-off"
+      },{
+          "id": "luce.ingresso.read",
+          "room": "ingresso",
+          "description": "Status Luce Ingresso",
+          "gad": "0/0/12",
+          "type": "on-off",
+          "tag":"light"
+       },{
+         "id": "luce.ingresso.set",
+         "room": "ingresso",
+         "description": "Set Luce ingresso",
+         "gad": "0/0/11",
+         "type": "on-off"
+      },{
+          "id": "luce.bagno.read",
+          "room": "ingresso",
+          "description": "Status Luce Bagno",
+          "gad": "0/0/14",
+          "type": "on-off",
+          "tag":"light"
+       },{
+         "id": "luce.bagno.set",
+         "room": "ingresso",
+         "description": "Set Luce bagno",
+         "gad": "0/0/13",
+         "type": "on-off"
+      },{
+          "id": "luce.faretto.bimbi.read",
+          "room": "ingresso",
+          "description": "Status Faretto Bimbi",
+          "gad": "0/0/16",
+          "type": "on-off",
+          "tag":"light"
+       },{
+         "id": "luce.faretto.bimbi.set",
+         "room": "ingresso",
+         "description": "Set Faretto Bimbi",
+         "gad": "0/0/15",
+         "type": "on-off"
+      },{
+          "id": "luce.camera.ma.read",
+          "room": "camera",
+          "description": "Status Luce Camera MA",
+          "gad": "0/0/18",
+          "type": "on-off",
+          "tag":"light"
+       },{
+         "id": "luce.camera.ma.set",
+         "room": "camera",
+         "description": "Set Luce Camera MA",
+         "gad": "0/0/17",
+         "type": "on-off"
+      }, {
+          "id": "luce.camera.bimbi.read",
+          "room": "camera",
+          "description": "Status Luce Camera Bimbi",
+          "gad": "0/0/20",
+          "type": "on-off",
+          "tag":"light"
+       },{
+         "id": "luce.camera.bimbi.set",
+         "room": "camera",
+         "description": "Set Luce Camera Bimbi",
+         "gad": "0/0/19",
+         "type": "on-off"
+      },{
+          "id": "luce.laboratorio.read",
+          "room": "laboratorio",
+          "description": "Status Luce Laboratorio",
+          "gad": "0/0/22",
+          "type": "on-off",
+          "tag":"light"
+       },{
+         "id": "luce.laboratorio.set",
+         "room": "laboratorio",
+         "description": "Set Luce Laboratorio",
+         "gad": "0/0/21",
+         "type": "on-off"
+      },{
+          "id": "luce.laboratorio.scrivania.read",
+          "room": "laboratorio",
+          "description": "Status Luce Laboratorio",
+          "gad": "0/0/24",
+          "type": "on-off",
+          "tag":"light"
+       },{
+         "id": "luce.laboratorio.scrivania.set",
+         "room": "laboratorio",
+         "description": "Set Luce Laboratorio",
+         "gad": "0/0/23",
+         "type": "on-off"
+      },{
+          "id": "luce.casa.albero.read",
+          "room": "casaalbero",
+          "description": "Status Luce Casa Albero",
+          "gad": "0/0/26",
+          "type": "on-off",
+          "tag":"light"
+       },{
+         "id": "luce.casa.albero.set",
+         "room": "casaalbero",
+         "description": "Set Luce Casa Albero",
+         "gad": "0/0/25",
+         "type": "on-off"
+      },{
+          "id": "luce.corridoio.read",
+          "room": "corridoio",
+          "description": "Status Luce Corridoio",
+          "gad": "0/0/28",
+          "type": "on-off",
+          "tag":"light"
+       },{
+         "id": "luce.corridoio.set",
+         "room": "corridoio",
+         "description": "Set Luce Corridoio",
+         "gad": "0/0/27",
+         "type": "on-off"
+      },{
+          "id": "luce.bagno.specchiera.read",
+          "room": "corridoio",
+          "description": "Status Luce Bagno Specchiera",
+          "gad": "0/0/30",
+          "type": "on-off",
+          "tag":"light"
+       },{
+         "id": "luce.bagno.specchiera.set",
+         "room": "corridoio",
+         "description": "Set Luce Bagno Specchiera",
+         "gad": "0/0/29",
+         "type": "on-off"
+      },{
+          "id": "luce.faretto.camera.ma.read",
+          "room": "corridoio",
+          "description": "Status Luce Faretto Camera MA",
+          "gad": "0/0/32",
+          "type": "on-off",
+          "tag":"light"
+       },{
+         "id": "luce.faretto.camera.ma.set",
+         "room": "corridoio",
+         "description": "Set Luce Faretto Camera MA",
+         "gad": "0/0/31",
+         "type": "on-off"
+      },{
+          "id": "luce.balcone.soggiorno.read",
+          "room": "balcone",
+          "description": "Status Luce Balcone Soggiorno",
+          "gad": "0/0/36",
+          "type": "on-off",
+          "tag":"light"
+       },{
+         "id": "luce.balcone.soggiorno.set",
+         "room": "balcone",
+         "description": "Set Luce Balcone Soggiorno",
+         "gad": "0/0/35",
+         "type": "on-off"
+      },
+     {
+          "id": "luce.balcone.camera.read",
+          "room": "balcone",
+          "description": "Status Luce Balcone Camera",
+          "gad": "0/0/38",
+          "type": "on-off",
+          "tag":"light"
+       },{
+         "id": "luce.balcone.camera.set",
+         "room": "balcone",
+         "description": "Set Luce Balcone Camera",
+         "gad": "0/0/37",
+         "type": "on-off"
+      }, {
+          "id": "luce.terrazzo.read",
+          "room": "balcone",
+          "description": "Status Luce Terrazzo",
+          "gad": "0/0/40",
+          "type": "on-off",
+          "tag":"light"
+       },{
+         "id": "luce.terrazzo.set",
+         "room": "balcone",
+         "description": "Set Luce Terrazzo",
+         "gad": "0/0/39",
+         "type": "on-off"
+      }, {
+          "id": "luce.pensatoio.read",
+          "room": "pensatoio",
+          "description": "Status Luce Pensatoio",
+          "gad": "0/0/42",
+          "type": "on-off",
+          "tag":"light"
+       },{
+         "id": "luce.pensatoio.set",
+         "room": "pensatoio",
+         "description": "Set Luce Pensatoio",
+         "gad": "0/0/41",
+         "type": "on-off"
+      }, {
+          "id": "luce.paretedx.bimbi.read",
+          "room": "bimbi",
+          "description": "Status Luce PareteDX Bimbi",
+          "gad": "0/0/44",
+          "type": "on-off",
+          "tag":"light"
+       },{
+         "id": "luce.paretedx.bimbi.set",
+         "room": "bimbi",
+         "description": "Set Luce PareteDX Bimbi",
+         "gad": "0/0/44",
+         "type": "on-off"
+      }, {
+          "id": "luce.colonna.bimbi.read",
+          "room": "bimbi",
+          "description": "Status Luce Colonna Bimbi",
+          "gad": "0/0/46",
+          "type": "on-off",
+          "tag":"light"
+       },{
+         "id": "luce.colonna.bimbi.set",
+         "room": "bimbi",
+         "description": "Set Luce Colonna Bimbi",
+         "gad": "0/0/45",
+         "type": "on-off"
+      }, {
+          "id": "luce.specchiera.bagno.pt5.read",
+          "room": "bagno.sopra",
+          "description": "Status Luce Specchiera Bagno PT5",
+          "gad": "0/0/48",
+          "type": "on-off",
+          "tag":"light"
+       },{
+         "id": "luce.luce.specchiera.bagno.pt5.set",
+         "room": "bagno.sopra",
+         "description": "Set Luce Specchiera Bagno PT5",
+         "gad": "0/0/47",
+         "type": "on-off"
+      }, {
+          "id": "luce.bagno.pt5.read",
+          "room": "bagno.sopra",
+          "description": "Status Luce Bagno PT5",
+          "gad": "0/0/50",
+          "type": "on-off",
+          "tag":"light"
+       },{
+         "id": "luce.luce.bagno.pt5.set",
+         "room": "bagno.sopra",
+         "description": "Set Luce Bagno PT5",
+         "gad": "0/0/49",
+         "type": "on-off"
+      }, {
+          "id": "luce.isola.cucina.read",
+          "room": "soggiorno",
+          "description": "Status Isola Cucina",
+          "gad": "0/0/52",
+          "type": "on-off",
+          "tag":"light"
+       },{
+         "id": "luce.isola.cucina.set",
+         "room": "soggiorno",
+         "description": "Set Isola Cucina",
+         "gad": "0/0/51",
+         "type": "on-off"
+      },
+
+{
+          "id": "termostato.soggiorno.read",
+          "room": "soggiorno",
+          "description": "Lettura Temperatura soggiorno",
+          "gad" : "0/0/89",
+          "type": "temp",
+          "tag":"temp"
+      },
+
+{
+          "id": "termostato.camera.ma.read",
+          "room": "camera",
+          "description": "Lettura Temperatura Camera MA",
+          "gad" : "0/0/92",
+          "type": "temp",
+          "tag":"temp"
+      },
+{
+          "id": "termostato.bimbi.read",
+          "room": "bimbi",
+          "description": "Lettura Temperatura Bimbi",
+          "gad" : "0/0/95",
+          "type": "temp",
+          "tag":"temp"
       }
+
   ]
 }

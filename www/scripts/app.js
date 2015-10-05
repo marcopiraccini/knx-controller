@@ -47,11 +47,14 @@ app.controller('AppController', ['$scope', '$location', '$http','knx-service', '
       * Toggle a button (on/off).
       */
      $scope.toggle = function(device) {
+         console.log("DEVICES", device);
          var val;
          if (device.value === 'on') {
              val = 'off';
+             device.value = 'off';
          } else {
              val = 'on';
+             device.value = 'on';
          }
          knxservice.post(device, val);
      }
@@ -64,36 +67,56 @@ app.controller('AppController', ['$scope', '$location', '$http','knx-service', '
              width: '32px',
              height: '32px',
              display: 'block',
-             'background-image': 'url(img/light_' + device.value +'.png)'
+             'background-image': 'url(img/light_' + (device.value ? device.value:'off') +'.png)'
          };
      };
 
+     /**
+      * Massive read to update all the device status
+      */
+     $scope.refresh = function() {
+         knxservice.refresh(device);
+     };
+
+     $http.get('config/devices.json')
+         .then(function(res){
+             $scope.devices = res.data;
+             // Reset the devices and sends a "read" message to every device
+             // to be displayed.
+             $scope.devices.forEach(function(device) {
+                 knxservice.read(device);
+             });
+       });
+
      eventservice.on('event', function(event) {
-         console.log("EVENT", event);
-         if ($scope.devices ) {
+         console.log("EVENT DEST", event.dest);
+         if ($scope.devices) {
              var device = $scope.devices.filter(function(device) {
                  return (event.dest === device.read);
              });
+
              if ((device) && (device[0])) {
                  device[0].value = event.val;
+             }
+             if (event.dest === "consumo.corrente.istantaneo.read") {
+                 $scope.consumoCorrente = event.val;
+             }
+             if (event.dest === "termostato.soggiorno.read") {
+                 $scope.termostatoSoggiorno = event.val;
+             }
+             if (event.dest === "termostato.camera.ma.read") {
+                 $scope.termostatoCamera = event.val;
+             }
+             if (event.dest === "termostato.bimbi.read") {
+                 $scope.termostatoBimbi = event.val;
+             }
+             if (event.dest === "termostato.laboratorio.read") {
+                 $scope.termostatoLaboratorio = event.val;
              }
          }
 
      });
 
-     $http.get('config/devices.json')
-         .then(function(res){
-             $scope.devices = res.data;
-
-             // Reset the devices and sends a "read" message to every device
-             // to be displayed.
-             $scope.devices.forEach(function(device) {
-                 if (device.tag === 'light') {
-                     device.value = 'off';
-                 }
-                 knxservice.read(device);
-             });
-       });
  }
 
 ]);

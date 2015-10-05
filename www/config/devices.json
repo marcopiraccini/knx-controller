@@ -20,5 +20,29 @@
           "read": "luce.laboratorio.read",
           "set": "luce.laboratorio.set",
           "tag":"light"
-          }
+      },{
+          "id": "consumo.corrente.istantaneo",
+          "read": "consumo.corrente.istantaneo.read",
+          "tag":"energy"
+      },
+      {
+          "id": "termostato.soggiorno",
+          "read": "termostato.soggiorno.read",
+          "tag":"energy"
+      },
+      {
+          "id": "termostato.camera.ma",
+          "read": "termostato.camera.ma.read",
+          "tag":"temp"
+      },
+      {
+          "id": "termostato.bimbi",
+          "read": "termostato.bimbi.read",
+          "tag":"temp"
+      },
+      {
+          "id": "termostato.laboratorio",
+          "read": "termostato.laboratorio.read",
+          "tag":"temp"
+      }
 ]

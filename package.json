@@ -11,6 +11,7 @@
   },
   "main": "main.js",
   "dependencies": {
+    "async": "^1.4.2",
     "bunyan": "^1.2.3",
     "debug": "^2.1.1",
     "eibd": "gti+ssh://git@github.com:marcopiraccini/node-eibd.git",

@@ -23,8 +23,10 @@ knx.init(knxHost, knxPort, function (err, knx) {
         process.exit(1);
     }
 
+    // Start the event store
     eventstore.start(knx);
 
+    // Start the HTTP module (API / Web Content)
     api.start(httpPort, knx, function(err) {
         if (err) {
             console.log(err);
