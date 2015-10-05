@@ -95,7 +95,6 @@ app.controller('AppController', ['$scope', '$location', '$http','knx-service', '
              });
 
              if ((device) && (device[0])) {
-                 console.log("********", device[0].id,'setting', event.val)
                  device[0].value = event.val;
              }
              if (event.dest === "consumo.corrente.istantaneo.read") {
