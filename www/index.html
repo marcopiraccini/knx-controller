@@ -1,117 +1,116 @@
 <!doctype html>
 
 <html class="no-js" ng-app="knx-console">
-  <head>
-    <meta charset="utf-8">
-    <title>KNX Console</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8">
+  <title>KNX Console</title>
 
-    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="css/app.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="lib/angular/angular.js"></script>
-    <!-- script src="lib/angular-new-router/dist/router.es5.js"></script-->
-    <script src="lib/angular-route/angular-route.js"></script>
-    <script src="lib/angular-animate/angular-animate.js"></script>
-    <script src="scripts/app.js"></script>
-    <script src="scripts/knx-service.js"></script>
-    <script src="scripts/event-service.js"></script>
-    <script src="./components/p4/p4.js"></script>
-    <script src="./components/p5/p5.js"></script>
-    <script src="./components/graph/graph.js"></script>
+  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="css/app.css" />
 
-    <style type="text/css">
-        .p4 {
-            width: 1110px;
-            height: 850px;
-            background-image: url('img/p4.png');
-            background-repeat: no-repeat;
-            position: absolute;
-        }
-        .p5 {
-            width: 1110px;
-            height: 850px;
-            background-image: url('img/p5.png');
-            background-repeat: no-repeat;
-            position: absolute;
-        }
-        .graph {
-            left: 100px;    
-            width: 1110px;
-            height: 850px;
-            position: absolute;
-        }
-        .notification {
-            width: 1110px;
-            height: 100px;
-        }
-    </style>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="lib/angular/angular.js"></script>
+  <!-- script src="lib/angular-new-router/dist/router.es5.js"></script-->
+  <script src="lib/angular-route/angular-route.js"></script>
+  <script src="lib/angular-animate/angular-animate.js"></script>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/knx-service.js"></script>
+  <script src="scripts/event-service.js"></script>
+  <script src="./components/p4/p4.js"></script>
+  <script src="./components/p5/p5.js"></script>
 
-  </head>
+  <style type="text/css">
+    .p4 {
+      width: 1110px;
+      height: 850px;
+      background-image: url('img/p4.png');
+      background-repeat: no-repeat;
+      position: absolute;
+    }
 
-  <body ng-controller="AppController">
+    .p5 {
+      width: 1110px;
+      height: 850px;
+      background-image: url('img/p5.png');
+      background-repeat: no-repeat;
+      position: absolute;
+    }
 
-      <div class="menuTitle"></div>
-      <div id="notificationZone" class="notification">
-          <table cellspacing="10">
-              <tr>
-                  <td>
-                      <div class="panel panel-primary">
-                          <div class="panel-heading">Instant Power (KW)</div>
-                          <div class="panel-body" align="center">{{consumoCorrente}}</div>
-                      </div>
-                  </td>
-                  <td/>
-                  <td>
-                      <div class="panel panel-success">
-                          <div class="panel-heading">Soggiorno (°C)</div>
-                          <div class="panel-body" align="center">{{termostatoSoggiorno}}</div>
-                      </div>
-                  </td>
-                  <td/>
-                  <td>
-                      <div class="panel panel-success">
-                          <div class="panel-heading">Laboratorio (°C)</div>
-                          <div class="panel-body" align="center">{{termostatoLaboratorio}}</div>
-                      </div>
-                  </td>
-                  <td/>
-                  <td>
-                      <div class="panel panel-success">
-                          <div class="panel-heading">Bagno (°C)</div>
-                          <div class="panel-body" align="center">{{termostatoBagno}}</div>
-                      </div>
-                  </td>
-                  <td/>
-                  <td>
-                      <div class="panel panel-success">
-                          <div class="panel-heading">Stanza Giochi Bimbi (°C)</div>
-                          <div class="panel-body" align="center">{{termostatoCasaAlbero}}</div>
-                      </div>
-                  </td>
-              </tr>
-          <table>
+    .notification {
+      width: 1110px;
+      height: 100px;
+    }
+  </style>
 
-     </div>
+</head>
 
-    <div>
-        <li class="loader" ng-if="router.isNavigating">
-          <i class="fa fa-spinner fa-spin fa-2x"></i>
-        </li>
-    </div>
+<body ng-controller="AppController">
 
-      <div id="screen">
-          <a ng-href="#/{{prev}}">
-              <img class="prev" src="img/previous.png" alt="prev" width="42" height="53" style="z-index: 1;position: absolute; left: 10px; top: 405px; display: block;"/>
-          </a>
-          <div ng-view></div>
+  <div class="menuTitle"></div>
+  <div id="notificationZone" class="notification">
+    <table cellspacing="10">
+      <tr>
+        <td>
+          <div class="panel panel-primary">
+            <div class="panel-heading">Instant Power (KW)</div>
+            <div class="panel-body" align="center">{{consumoCorrente}}</div>
+          </div>
+        </td>
+        <td />
+        <td>
+          <div class="panel panel-success">
+            <div class="panel-heading">Soggiorno (°C)</div>
+            <div class="panel-body" align="center">{{termostatoSoggiorno}}</div>
+          </div>
+        </td>
+        <td />
+        <td>
+          <div class="panel panel-success">
+            <div class="panel-heading">Laboratorio (°C)</div>
+            <div class="panel-body" align="center">{{termostatoLaboratorio}}</div>
+          </div>
+        </td>
+        <td />
+        <td>
+          <div class="panel panel-success">
+            <div class="panel-heading">Bagno (°C)</div>
+            <div class="panel-body" align="center">{{termostatoBagno}}</div>
+          </div>
+        </td>
+        <td />
+        <td>
+          <div class="panel panel-success">
+            <div class="panel-heading">Stanza Giochi Bimbi (°C)</div>
+            <div class="panel-body" align="center">{{termostatoCasaAlbero}}</div>
+          </div>
+        </td>
+      </tr>
+      <table>
 
-          <a ng-href="#/{{next}}">
-              <img class="next" src="img/next.png" alt="next" width="42" height="53"  style="z-index: 1; position: absolute; left: 1070px; top: 405px; display: block;"/>
-          </a>
-      </div>
+  </div>
 
-  </body>
+  <div>
+    <li class="loader" ng-if="router.isNavigating">
+      <i class="fa fa-spinner fa-spin fa-2x"></i>
+    </li>
+  </div>
+
+  <div id="screen">
+    <a ng-href="#/{{prev}}">
+      <img class="prev" src="img/previous.png" alt="prev" width="42" height="53"
+        style="z-index: 1;position: absolute; left: 10px; top: 405px; display: block;" />
+    </a>
+    <div ng-view></div>
+
+    <a ng-href="#/{{next}}">
+      <img class="next" src="img/next.png" alt="next" width="42" height="53"
+        style="z-index: 1; position: absolute; left: 1070px; top: 405px; display: block;" />
+    </a>
+  </div>
+
+</body>
+
 </html>
